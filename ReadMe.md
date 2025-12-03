@@ -1,4 +1,5 @@
 # Ex02 Commercial Website
+## Date:11.08.2025
 
 ## AIM
 To create a commercial website using CSS Flexbox.
@@ -50,125 +51,93 @@ Deploy the website.
 Upload to GitHub Pages for free hosting.
 
 ## PROGRAM
-### HTML
+index.html
 ```
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthCare</title>
-    <link rel="stylesheet" href="index.css">
+    <title>TastyBites - Food Paradise</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header -->
     <header>
-        <h1>Healthcare</h1>
+        <div class="logo">Tasty<span>Bites</span></div>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#products">Products</a>
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact Details</a>
-            <a href="#account">User Account</a>
+            <a href="#">Home</a>
+            <a href="#">Menu</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
         </nav>
     </header>
 
-    <!-- Home / Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-text">
-            <h2>Healthy Life Happy Life</h2>
-            <p>Healthcare brings you premium, doctor-tested natural foods, products that nourish, protect your health naturally.</p>
-            <a href="#products" class="btn">Shop Now</a>
+    <section class="hero">
+        <h1>Delicious Meals, <span>Every Day!</span></h1>
+        <p>Freshly prepared dishes with love & flavor.</p>
+        <a href="#" class="btn">Explore Menu</a>
+    </section>
+
+    <section class="menu-section">
+        <h2>Our Special Menu</h2>
+        <div class="menu-items">
+            <div class="item">
+                <img src="pizza.jpeg" alt="Pizza">
+                <h3>Cheesy Pizza</h3>
+                <p>Loaded with cheese and fresh toppings.</p>
+            </div>
+            <div class="item">
+                <img src="burger.jpeg" alt="Burger">
+                <h3>Juicy Burger</h3>
+                <p>Perfectly grilled with a secret sauce.</p>
+            </div>
+            <div class="item">
+                <img src="pasta.jpeg" alt="Pasta">
+                <h3>Italian Pasta</h3>
+                <p>Rich, creamy, and utterly delicious.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="products">
-        <h2>Our Products & Services</h2>
-        <div class="product-card">
-            <img src="images/nuts.webp" alt="Nuts">
-            <h3>Nuts</h3>
-            <p>A healthy food.</p>
-            <span class="price">₹320.00</span>
-        </div>
-
-        <div class="product-card">
-            <img src="images/whole grain.jpeg" alt="Whole grain">
-            <h3>Whole grain</h3>
-            <p>Opt for whole grains like brown rice, oats, quinoa, and whole-wheat bread instead of refined grains.</p>
-            <span class="price">₹250.00</span>
-        </div>
-
-        <div class="product-card">
-            <img src="images/fats.jpeg" alt="Healthy Fats">
-            <h3>Healthy Fats</h3>
-            <p>Choose healthy fats from sources like avocados, nuts, seeds, and olive oil. These fats are important for brain health, hormone production, and nutrient absorption. </p>
-            <span class="price">₹500.00</span>
-        </div>
-    </section>
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Details</h2>
-        <p>Email: jespiah@healthcare.com</p>
-        <p>Phone: +91 6383389837</p>
-        <p>Address: Gandhi Street, Delhi, India</p>
-    </section>
-
-    <!-- User Account Section -->
-    <section id="account" class="account">
-        <h2>User Account</h2>
-        <form>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" required><br><br>
-            
-            <button type="submit" class="btn">Login</button>
-            <p>New user? <a href="#">Create an account</a></p>
-        </form>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <div class="social-links">
-            <a href="https://facebook.com/glowcare" target="_blank">Facebook</a> |
-            <a href="https://instagram.com/glowcare" target="_blank">Instagram</a> |
-            <a href="https://twitter.com/glowcare" target="_blank">Twitter</a>
-        </div>
-        <p>&copy; 2025 Healthcare. All rights reserved.</p>
+        <p>© 2025 TastyBites. All Rights Reserved.</p>
     </footer>
 
 </body>
 </html>
 ```
-### CSS
+style.css
+
 ```
-body {
-    font-family: Arial, sans-serif;
-    font-size: larger;
+* {
     margin: 0;
     padding: 0;
-    background: #fdfdfd;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
     color: #333;
 }
 
 /* Header */
 header {
-    background: #0a801c;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
-    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    color: white;
 }
 
-header h1 {
-    margin: 0;
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+.logo span {
+    color: yellow;
 }
 
 nav a {
@@ -177,166 +146,92 @@ nav a {
     margin-left: 20px;
     font-weight: bold;
 }
-
 nav a:hover {
-    color: #6ecd7c;
+    text-decoration: underline;
 }
 
 /* Hero Section */
 .hero {
-    background-color: #fff5f7;
     text-align: center;
-    padding: 120px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: white;
 }
-
-.hero-text {
-    max-width: 600px;
-    background: #f4f8f5;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.hero-text h2 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 2.5rem;
-    font-size: larger;
+.hero h1 {
+    font-size: 48px;
     margin-bottom: 15px;
 }
-
-.hero-text p {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.1rem;
+.hero h1 span {
+    color: yellow;
 }
-
-.hero h2 {
-    font-size: 40px;
+.hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
 }
-
-/* Buttons */
 .btn {
-    display: inline-block;
-    margin-top: 100px;
-    padding: 10px 20px;
-    background: white;
-    color:  #0a801c;
+    padding: 12px 25px;
+    background: yellow;
+    color: black;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
-    transition: background 0.3s;
+    border-radius: 8px;
 }
-
 .btn:hover {
-    background: #55cf67;
+    background: orange;
 }
 
-/* Products Section */
-.products {
-    padding: 40px 20px;
+/* Menu Section */
+.menu-section {
+    padding: 50px 20px;
     text-align: center;
 }
-
-.product-card {
+.menu-section h2 {
+    font-size: 36px;
+    color: #ff4b2b;
+    margin-bottom: 40px;
+}
+.menu-items {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.item {
     background: white;
-    display: inline-block;
-    width: 250px;
-    margin: 15px;
-    padding: 15px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s;
 }
-
-.product-card img {
+.item:hover {
+    transform: scale(1.05);
+}
+.item img {
     width: 100%;
-    border-radius: 10px;
+    height: auto;
 }
-
-.price {
-    display: block;
-    margin-top: 10px;
-    color: #6ecd7c;
-    font-weight: bold;
+.item h3 {
+    color: #ff4b2b;
+    margin: 15px 0 10px;
 }
-
-
-/* Contact Section */
-.contact {
-    padding: 40px 20px;
-    background: #85f195;
-    text-align: center;
-}
-
-/* User Account Section */
-.account {
-    padding: 40px 20px;
-    background: #ffffff;
-    text-align: center;
-}
-
-.account form {
-    background: #b4f4bd;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 350px;
-    margin: 0 auto;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-}
-
-.account input {
-    width: 90%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #85f195;
-    border-radius: 5px;
-    outline: none;
-}
-
-.account button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #85f195;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.account button:hover {
-    background: #499755;
+.item p {
+    padding: 0 15px 15px;
+    font-size: 16px;
+    color: #555;
 }
 
 /* Footer */
 footer {
-    background: #0a801c;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
     color: white;
     text-align: center;
-    padding: 15px;
-}
-
-.social-links {
-    margin-bottom: 10px;
-}
-
-.social-links a {
-    color: white;
-    margin: 0 8px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.social-links a:hover {
-    text-decoration: underline;
+    padding: 15px 0;
 }
 ```
-
 ## OUTPUT
-<img width="1895" height="863" alt="image" src="https://github.com/user-attachments/assets/1383aef5-f5a4-4845-a081-28331b48f06a" />
-<img width="1876" height="841" alt="image" src="https://github.com/user-attachments/assets/3941b835-82a2-42d2-b130-d24237faa460" />
-<img width="1897" height="470" alt="image" src="https://github.com/user-attachments/assets/f3db3e37-3264-45fa-ad7c-145adfeb9694" />
-<img width="1908" height="827" alt="image" src="https://github.com/user-attachments/assets/6dba8c30-58d2-42eb-8148-86198457b64d" />
+
+<img width="1907" height="1013" alt="image" src="https://github.com/user-attachments/assets/51ad221b-6d5e-49db-8e88-08ac1f68bdc5" />
 
 
 ## RESULT
